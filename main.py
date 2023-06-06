@@ -2,6 +2,8 @@
 
 import numpy as np
 import math
+import plotly.graph_objects as go
+
 
 # Just an example; R >> r is what matters.
 R = 2000
@@ -41,3 +43,10 @@ q = np.empty(shape=(N, 1))  # Each entry is a point on the surface.
 assert np.isclose(f(q[0]), f(q[N]))  # q[N] - q[0] = (n,m)
 
 # f(q) returns an array with all points mapped.
+
+
+# Draw surface.
+
+# Set go.Surface with x-, y, z = f
+# Set fig
+# Show fig

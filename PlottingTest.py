@@ -1,11 +1,11 @@
-# Let's try these libraries to try to make 
+# Let's try these libraries to try to make
 # an interactive animation
 
 import numpy as np
 import plotly.graph_objects as go
 
 # This is the same parametrisation of the
-# torus that we discussed in my office 
+# torus that we discussed in my office
 
 # we can choose different radi
 R = 5
@@ -29,7 +29,7 @@ z = r * np.sin(theta)
 
 torus = go.Surface(x=x, y=y, z=z, colorscale='Viridis')
 
-# To display the plot we need to choose how to display the 
+# To display the plot we need to choose how to display the
 # plot object, for example, let's go with a figure
 
 # Create a figure based on the plot:
@@ -38,10 +38,10 @@ fig = go.Figure(data=[torus])
 # Display the figure:
 fig.show()
 
-# We can also use the library to make line plot 
+# We can also use the library to make line plot
 # this is when we give the computer a sequence of points
-# and it plots the line curve joining those points 
-# consecutively 
+# and it plots the line curve joining those points
+# consecutively
 
 # For example, this is a list of points in 3D space:
 points = [(1, 1, 1), (1, 1, 2), (1, 2, 2), (2, 1, 2), (3, 2, 2)]
@@ -51,16 +51,16 @@ x_coordinates, y_coordinates, z_coordinates = zip(*points)
 
 # And we use the Scatter3d function to make a line plot:
 line = go.Scatter3d(
-    x=x_coordinates, 
-    y=y_coordinates, 
-    z=z_coordinates, 
+    x=x_coordinates,
+    y=y_coordinates,
+    z=z_coordinates,
     mode='lines')
 
 # Just as above we can visualise what we did using figure and show:
 fig = go.Figure(data=[line])
 fig.show()
 
-# When we want to visualise both the torus and the line 
+# When we want to visualise both the torus and the line
 # we can do something like:
 
 fig = go.Figure(data=[torus, line])
@@ -72,10 +72,10 @@ fig.show()
 # steps of our process will also allow us to debug quickly
 # any problems that appear along the way
 
-# We can make animations by simply passing an array of 
-# figure objects. Here is an example which consists of 
-# a plane, which is fixed, and a circle line that starts 
-# as contained in the plane and rotates around an axis 
+# We can make animations by simply passing an array of
+# figure objects. Here is an example which consists of
+# a plane, which is fixed, and a circle line that starts
+# as contained in the plane and rotates around an axis
 # contained in the plane
 
 # Define the plane (a 2D grid in the x-z plane)
@@ -84,7 +84,7 @@ z_plane = np.linspace(-5, 5, 10)
 x_plane, z_plane = np.meshgrid(x_plane, z_plane)
 y_plane = np.zeros_like(x_plane)
 
-plane = go.Surface(x=x_plane, y=y_plane, 
+plane = go.Surface(x=x_plane, y=y_plane,
                    z=z_plane, opacity=0.5, showscale=False)
 
 # Define the circle (centered at the origin, in the x-z plane)
@@ -94,10 +94,10 @@ x_circle = np.cos(theta)
 z_circle = np.sin(theta)
 
 # Now to the important bit
-# we create a collection of frames for the 
+# we create a collection of frames for the
 # rotating circle:
 
-# we begin with an empty array: 
+# we begin with an empty array:
 frames = []
 
 # then we generate a frame for each rotation
@@ -108,7 +108,7 @@ for i in range(10):
     rotation_angle = i * np.pi / 18
     y_circle = np.sin(rotation_angle) * z_circle
     z_circle_rotated = np.cos(rotation_angle) * z_circle
-    circle = go.Scatter3d(x=x_circle, y=y_circle, 
+    circle = go.Scatter3d(x=x_circle, y=y_circle,
                           z=z_circle_rotated, mode='lines')
     frames.append(go.Frame(data=[plane, circle]))
 
