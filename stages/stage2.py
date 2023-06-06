@@ -1,14 +1,24 @@
 """Stage 2 - Compute the (Approximated) Length of a curve on the torus:"""
 
 
+def EuclideanDistance(A, B):
+    """Euclidean distance A to B."""
+    try:
+        assert len(A) == len(B)
+    except AssertionError:
+        raise ValueError(f"{A} and {B} must be the same dimension")
+    else:
+        return sum([(A[p] - B[p])**2 for p in range(len(A))])**0.5
+
+
 def GetGammaLength(gamma):
+    """Approximate path length along gamma (a list of 2D points.)"""
     N = len(gamma)
     total_length = 0
     for n in range(0, N-1):
         point1 = gamma[n]
         point2 = gamma[n+1]
-        segment_length = ((point1[0]-point2[0])**2 +
-                          (point1[1]-point2[1])**2) ** 0.5
+        segment_length = EuclideanDistance(point1, point2)
 
         total_length += segment_length
 
