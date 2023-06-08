@@ -1,6 +1,8 @@
 """Stage 2 - Compute the (Approximated) Length of a curve on the torus:"""
 
+import numpy as np
 
+'''
 def EuclideanDistance(A, B):
     """Euclidean distance A to B."""
     try:
@@ -9,6 +11,7 @@ def EuclideanDistance(A, B):
         raise ValueError(f"{A} and {B} must be the same dimension")
     else:
         return sum([(A[p] - B[p])**2 for p in range(len(A))])**0.5
+'''
 
 
 def GetGammaLength(gamma):
@@ -18,7 +21,7 @@ def GetGammaLength(gamma):
     for n in range(0, N-1):
         point1 = gamma[n]
         point2 = gamma[n+1]
-        segment_length = EuclideanDistance(point1, point2)
+        segment_length = np.linalg.norm(point1 - point2)
 
         total_length += segment_length
 
