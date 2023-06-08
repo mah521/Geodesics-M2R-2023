@@ -5,8 +5,8 @@ import plotly.graph_objects as go
 import numpy as np
 
 
-gamma = [(0, 0), (1, 1), (4, 5),
-         (9, 10), (-10, 3.14)]  # List of N points in 2D here:
+gamma = np.array([(0, 0), (1, 1), (4, 5),
+                 (9, 10), (-10, 3.14)])  # List of N points in 2D here:
 N = len(gamma)
 
 # Plot them on the plane
