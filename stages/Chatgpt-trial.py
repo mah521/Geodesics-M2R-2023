@@ -1,6 +1,6 @@
 """A version of stage1.py that has implemented""" + \
     """suggestions/corrections by ChatGPT."""
-
+ 
 import plotly.graph_objects as go
 import numpy as np
 
