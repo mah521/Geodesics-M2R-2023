@@ -382,3 +382,24 @@ animate_gradient_descent(f,
 # alpha = 0.0005 # step constant
 # step_size = 500 # step size for animation
 # threshold = 0 # threshold for gradient descent
+
+# Testing examples
+
+K = 1000  # Number of steps
+alpha = 0.00025  # Step constant
+step_size = 500  # Step Size for animation
+threshold = 0  # Threshold for gradient descent
+
+
+max_array = []
+steps, max_array = gradient_descent(f,
+                                    jacobian_f,
+                                    K,
+                                    alpha,
+                                    point_2d_list,
+                                    threshold)
+animate_gradient_descent(f,
+                         normal_f,
+                         steps,
+                         step_size,
+                         max_array)
