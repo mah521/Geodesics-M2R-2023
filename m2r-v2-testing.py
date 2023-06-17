@@ -315,9 +315,10 @@ point_2d_list = generate_perturbed_line(n,
 # PLOT PARAMETERS
 epsilon = 0.025  # pushes the curve epsilon above the torus
 
+
 # DESCENT PARAMETERS
-K = 12000  # Number of steps
-alpha = 0.00025  # step constant
+# K = 1000  # Number of steps
+# alpha = 0.00025  # step constant
 step_size = 300  # step size for animation
 threshold = 0  # threshold for gradient descent
 
@@ -327,26 +328,26 @@ threshold = 0  # threshold for gradient descent
 # plot_plane_and_torus(f, normal_f, last, epsilon)
 
 # UNCOMMENT FOR FULL ANIMATION
-max_array = []
-steps, max_array = gradient_descent(f,
-                                    jacobian_f,
-                                    K,
-                                    alpha,
-                                    point_2d_list,
-                                    threshold)
-animate_gradient_descent(f,
-                         normal_f,
-                         steps,
-                         step_size,
-                         max_array)
+# max_array = []
+# steps, max_array = gradient_descent(f,
+#                                     jacobian_f,
+#                                     K,
+#                                     alpha,
+#                                     point_2d_list,
+#                                     threshold)
+# animate_gradient_descent(f,
+#                         normal_f,
+#                         steps,
+#                         step_size,
+#                         max_array)
 
 # Examples that work
 
-# n = 1 # Homotopy class
-# m = 0 # Homotopy class
-# N = 150 # Number of points on the curve
-# K = 2000 # Number of steps
-# alpha = 0.00065 # step constant
+n = 1  # Homotopy class
+m = 0  # Homotopy class
+N = 150  # Number of points on the curve
+K = 20000  # Number of steps
+alpha = 0.00065  # step constant
 
 # n = 0 # Homotopy class
 # m = 1 # Homotopy class
@@ -383,12 +384,13 @@ animate_gradient_descent(f,
 # step_size = 500 # step size for animation
 # threshold = 0 # threshold for gradient descent
 
+
 # Testing examples
 
-K = 1000  # Number of steps
-alpha = 0.00025  # Step constant
-step_size = 500  # Step Size for animation
-threshold = 0  # Threshold for gradient descent
+# K = 1000  # Number of steps
+# alpha = 0.00025  # Step constant
+# step_size = 500  # Step Size for animation
+# threshold = 0  # Threshold for gradient descent
 
 
 max_array = []
