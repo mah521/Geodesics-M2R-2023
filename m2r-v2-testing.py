@@ -343,11 +343,11 @@ threshold = 0  # threshold for gradient descent
 
 # Examples that work
 
-n = 1  # Homotopy class
-m = 0  # Homotopy class
-N = 150  # Number of points on the curve
-K = 20000  # Number of steps
-alpha = 0.00065  # step constant
+# n = 1  # Homotopy class
+# m = 0  # Homotopy class
+# N = 150  # Number of points on the curve
+# K = 20000  # Number of steps
+# alpha = 0.00065  # step constant
 
 # n = 0 # Homotopy class
 # m = 1 # Homotopy class
@@ -392,6 +392,17 @@ alpha = 0.00065  # step constant
 # step_size = 500  # Step Size for animation
 # threshold = 0  # Threshold for gradient descent
 
+''' Attempt to reconstruct scenario in v1 code.
+n = 1
+m = 1
+N = 100
+lambda_val = 0.005
+
+point_2d_list = generate_perturbed_line(n, m, N, lambda_val)
+
+K = 300
+alpha = 0.002
+steps = gradient_descent(K, alpha, point_2d_list)
 
 max_array = []
 steps, max_array = gradient_descent(f,
@@ -405,3 +416,4 @@ animate_gradient_descent(f,
                          steps,
                          step_size,
                          max_array)
+'''
