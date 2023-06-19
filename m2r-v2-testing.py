@@ -392,17 +392,15 @@ threshold = 0  # threshold for gradient descent
 # step_size = 500  # Step Size for animation
 # threshold = 0  # Threshold for gradient descent
 
-''' Attempt to reconstruct scenario in v1 code.
 n = 1
 m = 1
 N = 100
 lambda_val = 0.005
 
-point_2d_list = generate_perturbed_line(n, m, N, lambda_val)
+point_2d_list = generate_perturbed_line(n, m, N, lambda_val, 1)
 
-K = 300
-alpha = 0.002
-steps = gradient_descent(K, alpha, point_2d_list)
+K = 20000
+alpha = 0.0001
 
 max_array = []
 steps, max_array = gradient_descent(f,
@@ -416,4 +414,3 @@ animate_gradient_descent(f,
                          steps,
                          step_size,
                          max_array)
-'''
